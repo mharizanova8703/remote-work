@@ -1,0 +1,124 @@
+html {
+    font-size: 82.5%;
+}
+
+.font-small-x {
+    font-size: 1.1rem;
+}
+
+.font-xxsm {
+    font-size: 1.3rem;
+}
+
+.font-xsm {
+    font-size: 1.4rem;
+}
+
+.font-xs {
+    font-size: 1.4rem;
+}
+
+.font-sm {
+    font-size: 1.7rem;
+}
+
+.font-smlg {
+    font-size: 1.6rem;
+}
+
+.font-lg {
+    font-size: 2rem;
+}
+
+.font-md {
+    font-size: 2.2rem;
+}
+
+.font-xmd {
+    font-size: 2.4rem;
+}
+
+.font-xxmd {
+    font-size: 2.8rem;
+}
+
+.font-xl {
+    font-size: 3.2rem;
+}
+
+.font-xxl {
+    font-size: 3.8rem;
+}
+
+.letter-space {
+    letter-spacing: 2px;
+}
+
+.letter-space-s {
+    letter-spacing: .5px;
+}
+
+
+.letter-space-s {
+    letter-spacing: .5px;
+}
+
+.br-standard {
+    border-radius: 10px;
+}
+
+.w-200 {
+    width: 200px;
+}
+
+@media screen and (max-width: 1190px) {
+    html {
+        font-size: 72.5%;
+    }
+}
+
+@media screen and (max-width: 1181px) {
+    html {
+        font-size: 72.5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 66.25%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 69.375%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 66.25%;
+    }
+
+    .font-xxl {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 66.875%;
+    }
+}
