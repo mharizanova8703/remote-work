@@ -4,34 +4,38 @@
     background-color: $bg-black;
     color: $white;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    border-color: 1px solid $bg-black;
 }
 
 /* Hover Effect */
 .learn-more-button:hover {
-    background-color: #555;
+    background-color: transparent;
+    border: 1px solid $bg-black;
     transform: scale(1.05);
-    color: $white;
+    color: $black;
 
 }
 
 
 .learn-more-button:active {
     transform: scale(1);
-    background-color: #333;
+    background-color: transparent;
+    border: 1px solid $bg-black;
 }
 
 .navbar-button-register {
     display: inline-block;
-    padding: 4px 20px;
+    padding: 4px 14px;
     background-color: transparent;
     color: black;
     border: 1px solid black;
     text-decoration: none;
     border-radius: 1rem;
     font-size: 16px;
+    width: 100px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 

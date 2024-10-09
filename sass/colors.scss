@@ -1,7 +1,14 @@
 $bg-black:#000000;
 $white:#ffffff;
 $txt-black:#000000;
+$txt-grey:#686868;
+$black:#000000;
+
 
 .txt-black {
     color: $txt-black !important;
+}
+
+.txt-grey {
+    color: $txt-grey;
 }

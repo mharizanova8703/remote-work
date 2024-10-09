@@ -1,137 +1,161 @@
-#homePage {
-    nav {
-        .logo-dropdown {
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-
-        .dropdown-item {
-            display: inline-block;
-        }
-
-        li {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-
-            a {
-                color: $bg-black !important;
-                text-decoration: none;
-            }
-        }
-
-        .navbar-left {
-            .navbar-logo {
-                color: $bg-black;
-                text-decoration: none;
-            }
-        }
-
-        .navbar-left a,
-        .navbar-left .dropdown {
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-
-        .navbar-left a:hover,
-        .navbar-left .dropdown button:hover {
-            color: #ddd;
-        }
-
-        .navbar-right {
-            display: flex;
-        }
-
-        .navbar-button {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            padding: 10px 20px;
-            border: 1px solid white;
-            border-radius: 5px;
-        }
-
-        .navbar-button:hover {
-            background-color: #555;
-        }
-
-        .dropdown .dropdown-toggle {
-            background-color: transparent;
-            border: none;
-            color: white;
-            font-family: "Epilogue", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        .dropdown-menu {
-            background-color: #333;
-        }
-
-        .dropdown-menu a {
-            color: white;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #444;
-        }
-    }
-
+* {
+    box-sizing: border-box;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    #homePage {
-        nav {
-            .navbar-left {
-                display: none;
-            }
 
-            .hamburger {
-                display: block;
-            }
 
-            .mobile-menu {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: white;
-                padding: 2rem;
-                justify-content: center;
-                align-items: center;
-                z-index: 1000;
-            }
+a {
+    color: white;
+}
 
-            .mobile-menu a {
-                margin: 20px;
-                font-size: 1.5rem;
-            }
+.wrapper {
+    color: white;
+    padding: 2em;
+}
 
-            .navbar-right {
-                display: none;
-            }
+header {
+    display: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
 
-            .close-btn {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-size: 2rem;
-                cursor: pointer;
-            }
-        }
+.logo {
+    width: 200px;
+}
+
+.logo-bottom {
+    width: 90px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
+
+// Hamburger Menu button to toggle menu display
+.menu-button {
+    // Don't want button to look like a button
+    border: none;
+    background: transparent;
+
+    // place in upper right corner
+    position: absolute;
+    right: 25px;
+    top: 35px;
+
+    // Don't show menu button on large screens
+    @media (min-width: 900px) {
+        display: none;
     }
 
+    // When open, change button to an X for closing menu 
+    &.open {
+        span:first-child {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        span:nth-child(2) {
+            display: none;
+        }
+
+        span:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+// 'hamburger' bars
+.menu-bar {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: $txt-grey;
+    border-radius: 2px;
+    margin-bottom: 7px;
+
+    transition: transform 0.2s;
+}
+
+
+// Main menu navigation
+// Mobile first - links are hidden off to right on small screen until user opens menu 
+.menu {
+    position: fixed;
+    top: 100px;
+    right: -100%;
+    background: white;
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding: 2em;
+    transition: all .5s ease-in-out;
+
+    // Display menu on larger screens always
+    @media (min-width: 900px) {
+        position: unset;
+        background: unset;
+        width: auto;
+        height: auto;
+        padding: 0;
+        display: flex;
+    }
+
+    // When user clicks, menu is opened with 'open' class
+    &.open {
+        display: flex;
+        flex-direction: column;
+        right: 0;
+    }
+}
+
+// Individual Link styles (mobile first)
+.menu-link {
+    text-decoration: none;
+    display: block;
+    padding: 0.2em;
+    color: $txt-grey;
+    border-bottom: 1px solid transparent; // Prevent jumping on hover. Always take space
+    border-top: 1px solid transparent; // Prevent jumping on hover. Always take space
+
+    @media (min-width: 900px) {
+        padding: 5px;
+        margin: 0.5em;
+        color: white;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: #eee;
+        border-top: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+
+        @media (min-width: 900px) {
+            background-color: unset;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid white;
+        }
+    }
+}
+
+.active {
+    font-weight: bold;
+
+    &:hover {
+        cursor: default;
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+        background-color: unset;
+    }
+}
+
+// Don't animate transition between mobile menu when resizing window 
+.transition-stop * {
+    transition: none !important;
+}
+
+@media (max-width: 860px) {
+    .navbar {
+        display: none;
+    }
 }
